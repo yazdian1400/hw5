@@ -14,3 +14,9 @@ class Manager(name: String, age: Int, hourRate: Double): Employee(name, age, hou
     }
 
 }
+class Clerk(name: String, age: Int, hourRate: Double): Employee(name, age, hourRate){
+    override fun salary() {
+        TODO("Not yet implemented")
+    }
+
+}
