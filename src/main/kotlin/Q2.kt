@@ -1,4 +1,5 @@
 fun main( ){
+    //employees
     val employeeList = mutableListOf<Employee>()
     employeeList.add(Manager("Ali", 52, 104.0))
     employeeList.add(Clerk("Sama", 26, 110.0))
@@ -10,6 +11,15 @@ fun main( ){
     var totalSalaries = 0.0
     (0 .. 3).forEach {totalSalaries += employeeList[it].salary(hours[it])}
     println("\ntotal payment of all: $totalSalaries")
+
+    //customers
+    val costomerList = mutableListOf<Customer>()
+    costomerList.add(Customer("Sara", 22, Gender.Female))
+    costomerList.add(Customer("Maryam", 30, Gender.Female))
+    println("\ncustomer1 is equal to customer2: ${costomerList[0] == costomerList[1]}")
+
+
+
 }
 
 abstract class Employee(val name: String, val age: Int, val hourRate: Double){
