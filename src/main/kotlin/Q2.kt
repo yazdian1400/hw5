@@ -20,3 +20,10 @@ class Clerk(name: String, age: Int, hourRate: Double): Employee(name, age, hourR
     }
 
 }
+data class Customer(val name: String, val age: Int, val gender: Gender){
+}
+
+enum class Gender{
+    Female,
+    Male
+}
