@@ -44,6 +44,24 @@ class MyClass<T> (val var1: T, val var2: T){
 }
 
 fun main(){
+    val int1 = MyClass(3, 6)
+    println("${int1.compare()}\t ${int1.toString()}")
+
+    val long1 = MyClass(5000000000000, 20000000000)
+    println("${long1.compare()}\t ${long1.toString()}")
+
+    val double1 = MyClass(4.00001, 4.00001)
+    println("${double1.compare()}\t ${double1.toString()}")
+
+    val string1 = MyClass("Maedeh", "Y")
+    println("${string1.compare()}\t ${string1.toString()}")
+
+    val char1 = MyClass('m', 'y')
+    println("${char1.compare()}\t ${char1.toString()}")
+
+    val boolean1 = MyClass(true, false)
+    println("${boolean1.compare()}\t ${boolean1.toString()}")
+
 
 }
 
