@@ -1,22 +1,32 @@
 fun main( ){
+    val employeeList = mutableListOf<Employee>()
+    employeeList.add(Manager("Ali", 52, 104.0))
+    employeeList.add(Clerk("Sama", 26, 110.0))
+    employeeList.add(Manager("Reza",42, 120.0))
+    employeeList.add(Manager("Farhad", 34, 120.0))
 
+    employeeList.forEach { println(it.toString())}
+    val hours = listOf(140.0, 150.0, 130.0, 180.0)
+    var totalSalaries = 0.0
+    (0 .. 3).forEach {totalSalaries += employeeList[it].salary(hours[it])}
+    println("\ntotal payment of all: $totalSalaries")
 }
 
 abstract class Employee(val name: String, val age: Int, val hourRate: Double){
-    abstract fun salary()
+    abstract fun salary(hours: Double): Double
     override fun toString(): String {
-        return "name: $name age: $age hourRate: $hourRate"
+        return "name: $name \tage: $age \thourRate: $hourRate"
     }
 }
 class Manager(name: String, age: Int, hourRate: Double): Employee(name, age, hourRate){
-    override fun salary() {
-        TODO("Not yet implemented")
+    override fun salary(hours: Double): Double {
+        return hourRate * hours
     }
 
 }
 class Clerk(name: String, age: Int, hourRate: Double): Employee(name, age, hourRate){
-    override fun salary() {
-        TODO("Not yet implemented")
+    override fun salary(hours: Double): Double {
+        return hourRate * hours / 2
     }
 
 }
