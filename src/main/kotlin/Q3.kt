@@ -34,6 +34,17 @@ class MyClass<T> (val var1: T, val var2: T){
         }
        return var2
     }
+
+    override fun toString(): String {
+        val result = this.compare()
+        if ( result == var1 && result == var2)   return "$var1 == $var2"
+        else if (result == var1)    return "$var1 > $var2"
+        else    return "$var1 < $var2"
+    }
+}
+
+fun main(){
+
 }
 
 
