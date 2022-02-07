@@ -16,10 +16,12 @@ fun main( ){
     val costomerList = mutableListOf<Customer>()
     costomerList.add(Customer("Sara", 22, Gender.Female))
     costomerList.add(Customer("Maryam", 30, Gender.Female))
-    println("\ncustomer1 is equal to customer2: ${costomerList[0] == costomerList[1]}")
+    println("\ncustomer1 == customer2: ${costomerList[0] == costomerList[1]}")
 
-
-
+    //managers
+    val managerList = employeeList.filter { employee -> employee is Manager }
+    println("\nmanager with max age:")
+    println(managerList.maxByOrNull { employee -> employee.age }.toString())
 }
 
 abstract class Employee(val name: String, val age: Int, val hourRate: Double){
@@ -42,7 +44,6 @@ class Clerk(name: String, age: Int, hourRate: Double): Employee(name, age, hourR
 }
 data class Customer(val name: String, val age: Int, val gender: Gender){
 }
-
 enum class Gender{
     Female,
     Male
