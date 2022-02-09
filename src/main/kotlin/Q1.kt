@@ -7,3 +7,7 @@ interface ServiceTransportationVehicle{
     fun maxSpeed()
     fun maxCapacity()
 }
+interface PrivateTransportationVehicle{
+    fun maxSpeed()
+    fun maxCapacity()
+}
